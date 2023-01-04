@@ -27,7 +27,6 @@ using CallbackReturn = rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface
 
 namespace ros2_control_kuka_driver
 {
-
 	class KukaSystemPositionOnlyHardware : public hardware_interface::SystemInterface
 	{
 	public:
