@@ -22,7 +22,7 @@ def generate_launch_description():
         get_package_share_directory('ros2_control_kuka_driver'),
         'config',
         'kuka_6dof_controller_position.yaml'
-        )
+    )
 
     rviz_config_file = os.path.join(
         get_package_share_directory('ros2_control_kuka_driver'),
@@ -34,10 +34,7 @@ def generate_launch_description():
             package='controller_manager',
             executable='ros2_control_node',
             parameters=[robot_description, robot_forward_controller],
-            output={
-            'stdout': 'screen',
-            'stderr': 'screen',
-            },
+            output="both",
         ),
         Node(
             package='robot_state_publisher',
@@ -48,12 +45,14 @@ def generate_launch_description():
         Node(
             package="controller_manager",
             executable="spawner",
-            arguments=["joint_state_broadcaster", "--controller-manager", "/controller_manager"],
+            arguments=["joint_state_broadcaster",
+                       "--controller-manager", "/controller_manager"],
         ),
         Node(
             package="controller_manager",
             executable="spawner",
-            arguments=["forward_command_controller_position", "--controller-manager", "/controller_manager"],
+            arguments=["forward_command_controller_position",
+                       "--controller-manager", "/controller_manager"],
         ),
         Node(
             package="rviz2",
