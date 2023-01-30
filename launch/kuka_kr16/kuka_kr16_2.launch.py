@@ -22,8 +22,8 @@ def generate_launch_description():
             "prefix",
             default_value="",
             description="Prefix of the joint names, useful for \
-        multi-robot setup. If changed than also joint names in the controllers' configuration \
-        have to be updated.",
+            multi-robot setup. If changed than also joint names in the controllers' configuration \
+            have to be updated.",
         )
     )
     declared_arguments.append(
