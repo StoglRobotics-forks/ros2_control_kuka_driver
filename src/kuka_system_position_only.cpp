@@ -205,7 +205,7 @@ CallbackReturn KukaSystemPositionOnlyHardware::on_deactivate(const rclcpp_lifecy
 }
 
 //WARN: NOT REAL TIME SAFE due to strings/possible allocations
-return_type KukaSystemPositionOnlyHardware::read()
+return_type KukaSystemPositionOnlyHardware::read(const rclcpp::Time &time, const rclcpp::Duration &period)
 {
 	RCLCPP_INFO(rclcpp::get_logger("KukaSystemPositionOnlyHardware"), "read()");
 
@@ -225,7 +225,7 @@ return_type KukaSystemPositionOnlyHardware::read()
 	return return_type::OK;
 }
 
-return_type KukaSystemPositionOnlyHardware::write()
+return_type KukaSystemPositionOnlyHardware::write(const rclcpp::Time &time, const rclcpp::Duration &period)
 {
 	RCLCPP_INFO(rclcpp::get_logger("KukaSystemPositionOnlyHardware"), "write()");
 

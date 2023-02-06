@@ -57,10 +57,10 @@ public:
 	// return_type stop() override;
 
 	ROS2_CONTROL_DRIVER_PUBLIC
-	return_type read() override;
+	return_type read(const rclcpp::Time &time, const rclcpp::Duration &period) override;
 
 	ROS2_CONTROL_DRIVER_PUBLIC
-	return_type write() override;
+	return_type write(const rclcpp::Time &time, const rclcpp::Duration &period) override;
 
 private:
 	// Dummy parameters
