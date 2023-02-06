@@ -34,10 +34,7 @@ def generate_launch_description():
             package='controller_manager',
             executable='ros2_control_node',
             parameters=[robot_description, robot_forward_controller],
-            output={
-            'stdout': 'screen',
-            'stderr': 'screen',
-            },
+            output="both",
         ),
         Node(
             package='robot_state_publisher',
